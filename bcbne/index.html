@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+        <h1>Backbone JS - Adding Two numbers!</h1>
+    </header>
+
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+
+        <script>
+          (function($){
+
+  // Object declarations goes here
+
+  $(document).ready(function () {
+
+   // Start application code goes here
+
+   // Create AddTwoNumbersModel instance and set
+    // model attributes.
+    var addTwoNumbersModel = new AddTwoNumbersModel({
+      number1: 2,
+      number2: 3
+    });
+
+    //Create PreviewAddNumbersView instance.
+    var previewAddNumbersView = new PreviewAddNumbersView({
+
+      // Pass our model.
+      model: addTwoNumbersModel,
+
+      // Set element where to render HTML.
+      el: 'body'
+    });
+
+    // Render view manually.
+    previewAddNumbersView.render();
+
+  });
+    })(jQuery);
+        </script>
+</body>
+</html>
