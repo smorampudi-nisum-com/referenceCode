@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Single Page Aapplication In Knockout JS</title>
+		<script type="text/javascript" src="C:\Users\Nisum\Desktop\knockOutJS\Scripts\libs\jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="C:\Users\Nisum\Desktop\knockOutJS\Scripts\libs\knockout-2.2.1.debug.js"></script>
+		<script type="text/javascript"
+		<script type="text/javascript" src="C:\Users\Nisum\Desktop\knockOutJS\Scripts\libs\base.js"></script>
+		<script type="text/javascript" src="C:\Users\Nisum\Desktop\knockOutJS\Scripts\knockout-docs.js"></script>
+		<script type="text/javascript" src="C:\Users\Nisum\Desktop\knockOutJS\Scripts\documents.js"></script>
+		<script type="text/javascript" src="C:\Users\Nisum\Desktop\knockOutJS\Scripts\libs\main.js"></script>
+		<script type="text/javascript" src="C:\Users\Nisum\Desktop\knockOutJS\Scripts\spreadSheet.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+		<link type="text/css" rel="stylesheet" href="C:\Users\Nisum\Desktop\knockOutJS\Styles\style.css"/>
+		
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<div class="well">
+						<h1 class="inline">Welcome to Knockout Docs</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span4">
+					<ul class="unstyled dropdown well" data-bind="foreach: items">
+						<li>
+							<i class="fa fa-file" aria-hidden="true"></i>
+							<a href="#" data-bind="text:title, click: $parent.editItem"></a>
+						</li>
+						
+					</ul>
+				</div>
+					<div class="span8">
+						<div class="well" data-bind="template: {name: selectedItem().templateName, data:selectedItem}"> <!--data property acts similarly as with pro[perty in data binding-->
+							
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="well">
+						Debug:
+						<!-- TODO: Add Debug Code Here -->
+						<p data-bind="text:ko.toJSON($data)"></p>
+					</div>
+				</div>
+			</div>
+			<script id="document-template" type="text/html">
+				<h4> Title:
+						<input class="input-xxlarge" type="text" data-bind="value:title"/>
+				</h4>
+				<div>
+					<h4>Body:</h4>
+						<textarea class="input-block-level" data-bind="value:body"></textarea>
+				</div>
+			</script>
+			<script id="spreadsheet-template" type="text/html">
+				<h4>Title:
+						<input class="input-xxlarge" type="text" data-bind="value:title"/>
+				</h4>
+				<table class="spreadsheet">
+					<tbody data-bind="foreach: rows">
+						<tr data-bind="foreach:cells">
+							<td>
+								<input type="text" data-bind="value:value"/>
+							</td>
+						</tr>
+						
+					</tbody>
+					
+				</table>
+			</script>
+		</body>
+</html>
